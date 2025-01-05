@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Rescue - Charity Trust</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #f47c3c;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+		}
+		section {
+			padding: 20px;
+		}
+		section h2 {
+			margin-bottom: 10px;
+		}
+		section p {
+			margin-bottom: 20px;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		ul li {
+			margin: 10px 0;
+		}
+		.gallery {
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+		.gallery img {
+			width: 30%;
+			border-radius: 5px;
+		}
+		.cta {
+			text-align: center;
+			margin: 20px 0;
+		}
+		.cta button {
+			padding: 10px 20px;
+			font-size: 1rem;
+			background-color: #f47c3c;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.cta button:hover {
+			background-color: #e76a2a;
+		}
+		footer {
+			background-color: #333;
+			color: white;
+			text-align: center;
+			padding: 10px;
+			margin-top: 20px;
+		}
+		/* Modal Styles */
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		.modal-content {
+			background-color: #fff;
+			margin: 10% auto;
+			padding: 20px;
+			width: 50%;
+			border-radius: 5px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+		.modal-content input,
+		.modal-content select,
+		.modal-content textarea {
+			width: 100%;
+			padding: 10px;
+			margin: 10px 0;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		.modal-content button {
+			padding: 10px 20px;
+			background-color: #f47c3c;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.modal-content button:hover {
+			background-color: #e76a2a;
+		}
+	</style>
+</head>
+<body>
+    <header>
+        <h1>Food Rescue</h1>
+    </header>
+
+    <section>
+        <h2>About Food Rescue</h2>
+        <p>
+            Our Food Rescue program is dedicated to saving surplus food from farms, markets, and restaurants
+            and redistributing it to families and communities in need. Together, we combat food waste and hunger.
+        </p>
+    </section>
+
+<section>
+    <h2>How It Works</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <!-- Step 1 -->
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+            <strong>Step 1:</strong> Collect surplus food from local partners.
+            <p>Our dedicated team collaborates with restaurants, supermarkets, and local food producers to gather edible surplus food. This helps reduce food waste while addressing hunger.</p>
+            <img src="https://th.bing.com/th/id/OIP.jFGIQ5Zp57C390bf5yN9YgHaE8?w=843&h=562&rs=1&pid=ImgDetMain" alt="Collecting food" style="width: 100%; max-width: 300px; margin-top: 10px; border-radius: 10px;">
+        </div>
+
+        <!-- Step 2 -->
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+            <strong>Step 2:</strong> Sort and ensure food quality for redistribution.
+            <p>The collected food is carefully sorted, checked for quality, and stored under hygienic conditions. We ensure only the best quality food is distributed to the beneficiaries.</p>
+            <img src="https://www.researchgate.net/publication/287202638/figure/fig7/AS:614276557447169@1523466352157/Scheme-of-interactions-between-redistribution-activities-and-stakeholders-along-the-food.png" alt="Sorting food" style="width: 100%; max-width: 300px; margin-top: 10px; border-radius: 10px;">
+        </div>
+
+        <!-- Step 3 -->
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+            <strong>Step 3:</strong> Deliver food to shelters, schools, and families in need.
+            <p>Once sorted, the food is packed and delivered efficiently to ensure it reaches the people who need it most, including shelters, schools, and vulnerable communities.</p>
+            <img src="https://th.bing.com/th/id/OIP.OGuC0wnVkhQucHWUROnsXQHaFj?w=1024&h=768&rs=1&pid=ImgDetMain" alt="Delivering food" style="width: 100%; max-width: 300px; margin-top: 10px; border-radius: 10px;">
+        </div>
+    </div>
+</section>
+
+
+    <section>
+        <h2>Our Impact</h2>
+        <p>Since the program's inception, we have achieved:</p>
+        <ul>
+            <li>Saved <strong>5 million kg</strong> of surplus food.</li>
+            <li>Fed <strong>2 million people</strong>.</li>
+            <li>Partnered with <strong>500+ organizations</strong>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Stories of Change</h2>
+        <p>
+            Meet Ananya, a mother of two who now receives fresh, healthy meals for her family every week, thanks to
+            our Food Rescue program. Her story is one of many that drives our mission forward.
+        </p>
+    </section>
+
+    <section>
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2023/06/iStock-1430271338.jpg" alt="Food Collection">
+            <img src="https://thumbs.dreamstime.com/z/happy-volunteers-holding-donation-cardboxes-humanitarian-aid-assistance-project-stock-photo-159232480.jpg" alt="Volunteers in Action">
+            <img src="https://i.ytimg.com/vi/kjGgh6V4fYU/maxresdefault.jpg" alt="Beneficiary Family">
+        </div>
+    </section>
+
+    <section>
+        <h2>FAQs</h2>
+        <p><strong>Q: What kind of food is rescued?</strong></p>
+        <p>A: We collect fresh produce, packaged goods, and cooked meals from certified partners.</p>
+        <p><strong>Q: How can I contribute?</strong></p>
+        <p>A: You can donate, volunteer, or become a partner organization.</p>
+    </section>
+
+    <section class="cta">
+        <h2>Be the Change</h2>
+        <p>Together, we can eliminate food waste and hunger. Join us in creating a better future.</p>
+        <button onclick="openModal()">Donate Now</button>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="donateModal">
+        <div class="modal-content">
+            <h2>Donation Form</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="foodType">Type of Food:</label>
+            <input type="text" id="foodType" placeholder="Enter food type" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" placeholder="Enter quantity" required>
+
+            <label for="transport">Do you need assistance to carry the items?</label>
+            <select id="transport" onchange="togglePersonCount()">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+
+            <div id="personCountField" style="display: none;">
+                <label for="personCount">How many persons do you need?</label>
+                <input type="number" id="personCount" placeholder="Enter number of persons">
+            </div>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" placeholder="Enter contact number" required>
+
+            <button onclick="submitDonation()">Donate</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Charity Trust. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const modal = document.getElementById('donateModal');
+        const personCountField = document.getElementById('personCountField');
+
+        function openModal() {
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        function togglePersonCount() {
+            const transport = document.getElementById('transport').value;
+            personCountField.style.display = transport === 'yes' ? 'block' : 'none';
+        }
+
+        function submitDonation() {
+            const name = document.getElementById('name').value;
+            const foodType = document.getElementById('foodType').value;
+            const quantity = document.getElementById('quantity').value;
+            const transport = document.getElementById('transport').value;
+            const personCount = transport === 'yes' ? document.getElementById('personCount').value : '0';
+            const contact = document.getElementById('contact').value;
+
+            if (!name || !foodType || !quantity || !contact) {
+                alert('Please fill all required fields.');
+                return;
+            }
+
+            alert(`Thank you, ${name}! Your donation of ${quantity} ${foodType}(s) has been registered. Assistance: ${transport}. Persons needed: ${personCount}. Contact: ${contact}.`);
+            closeModal();
+        }
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    </script>
+</html>

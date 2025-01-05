@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education and Training - Charity Trust</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #f47c3c;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav a {
+            color: #fff;
+            margin-left: 1rem;
+            text-decoration: none;
+        }
+        .education-main {
+            padding-top: 60px;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url('https://en-media.thebetterindia.com/uploads/2017/03/banner3.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .programs-section {
+            padding: 50px 20px;
+        }
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+        .program-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .program-content {
+            padding: 1.5rem;
+        }
+        .program-content h3 {
+            margin: 0 0 1rem 0;
+            color: #f47c3c;
+        }
+        .program-content ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .program-content ul li {
+            margin: 0.5rem 0;
+        }
+        .registration-section {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+        }
+        .registration-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .registration-form .form-group {
+            margin-bottom: 1rem;
+        }
+        .registration-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .registration-form input,
+        .registration-form select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .registration-form button {
+            padding: 0.7rem 1.5rem;
+            background: #f47c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .registration-form button:hover {
+            background: #e76a2a;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <header>
+        <div>Charity Trust</div>
+    </header>
+	</section>
+    <main class="education-main">
+        <section class="hero-section">
+            <h1>Education and Training Programs</h1>
+            <p>Empowering lives through knowledge and skills development</p>
+        </section>
+        <section class="programs-section">
+            <h2>Our Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+      
+                    <div class="program-content">
+                        <h3>Basic Literacy</h3>
+                        <p>Our Basic Literacy program is designed to provide foundational skills in reading, writing, and arithmetic for individuals of all ages. 
+                           This program is ideal for those who have had limited access to formal education.</p>
+                        <ul>
+                            <li>Learn to read and write in your local language.</li>
+                            <li>Develop essential numeracy skills for daily life.</li>
+                            <li>Build confidence to pursue further education or employment.</li>
+                        </ul>
+                        <p><strong>Duration:</strong> 6 months | <strong>Age Group:</strong> 12+ years</p>
+                    </div>
+                </div>
+                <div class="program-card">
+               
+                    <div class="program-content">
+                        <h3>Computer Skills</h3>
+                        <p>Our Computer Skills program equips participants with basic and intermediate computer knowledge to thrive in a digital world. 
+                           This program is perfect for students, job seekers, and small business owners looking to enhance their digital proficiency.</p>
+                        <ul>
+                            <li>Master the use of Microsoft Office tools like Word, Excel, and PowerPoint.</li>
+                            <li>Learn internet basics, including email communication and online research.</li>
+                            <li>Understand cybersecurity essentials for safe online interactions.</li>
+                        </ul>
+                        <p><strong>Duration:</strong> 3 months | <strong>Age Group:</strong> 15+ years</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="registration-section">
+            <h2>Register for a Program</h2>
+            <form class="registration-form">
+                <div class="form-group">
+                    <label for="program">Select Program</label>
+                    <select id="program" required>
+                        <option value="">Choose a program</option>
+                        <option value="basic-literacy">Basic Literacy</option>
+                        <option value="computer-skills">Computer Skills</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="Enter your phone number">
+                </div>
+                <button type="submit">Register Now</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

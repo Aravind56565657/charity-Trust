@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Trust Website</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f47c3c;
+            padding: 10px 20px;
+            color: white;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            position: relative;
+        }
+        header a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        header a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .banner h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .banner p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        .banner button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #f47c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .banner button:hover {
+            background-color: #e76a2a;
+        }
+.banner {
+    background: url('https://statustown.com/wp-content/uploads/englishstatusimages/Encouraging-Quotes-5983.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Needed to position scroll-down */
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px; /* Place it near the bottom of the banner */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Spacing between dots */
+    cursor: pointer;
+}
+
+.scroll-down span {
+    display: block;
+    width: 8px; /* Width of each dot */
+    height: 8px; /* Height of each dot */
+    border-radius: 50%; /* Makes it circular */
+    background-color: white; /* Dot color */
+    animation: scroll 1.5s infinite ease-in-out; /* Smooth animation */
+}
+
+.scroll-down span:nth-child(2) {
+    animation-delay: 0.2s; /* Slight delay for the 2nd dot */
+}
+
+.scroll-down span:nth-child(3) {
+    animation-delay: 0.4s; /* Slight delay for the 3rd dot */
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: #f1f1f1;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color: #f47c3c;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Donation Form */
+        #donate {
+            background-color: #fef5e7;
+            border-top: 2px solid #f47c3c;
+            border-bottom: 2px solid #f47c3c;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        #donate h2 {
+            color: #f47c3c;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        #donate p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        #donate button {
+            background: linear-gradient(135deg, #f47c3c, #e76a2a);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        #donate button:hover {
+            background: linear-gradient(135deg, #e76a2a, #f47c3c);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        /* Donation Form Styles */
+        .donation-form {
+    display: none;
+    padding: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 2px solid #f47c3c;
+    text-align: left;
+}
+        .donation-form h2 {
+            color: #f47c3c;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .donation-form label {
+            display: block;
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .donation-form input,
+        .donation-form select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .donation-form button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, #f47c3c, #e76a2a);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .donation-form button:hover {
+            background: linear-gradient(135deg, #e76a2a, #f47c3c);
+            transform: translateY(-3px);
+        }
+		.qr-code {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f47c3c;
+}
+
+.qr-code img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.qr-code button {
+    background: linear-gradient(135deg, #4CAF50, #3a9f40);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+        .qr-code h3 {
+            color: #f47c3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Charity Trust</div>
+        <nav>
+            <a href="about.html">Who We Are</a>
+            <a href="#work">Our Work</a>
+            <a href="#donate">Donate</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="banner">
+        <div class="scroll-down">
+            <span></span>
+            <span></span>
+            <span></span>
+			<span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <section id="work" class="section">
+        <h2>Our Work</h2>
+<div class="cards">
+    <div class="card">
+		<img src="https://static.wixstatic.com/media/8c8e4f_abbb542c658044378f874a1adfd2848d~mv2.jpeg" alt="Food Rescue">
+		<h3><a href="food-rescue.html" >Food Rescue</a></h3>
+		<p>Helping save fresh produce and feeding families in need.</p>
+	</div>
+
+    <div class="card">
+        <img src="https://th.bing.com/th/id/OIP.MuTWK6YqRuxaIrlPlgQKHQHaE8?w=3456&h=2304&rs=1&pid=ImgDetMain" alt="Child Hunger">
+        <h3><a href="child-hunger.html">Child Hunger</a></h3>
+        <p>Providing meals to children across the globe.</p>
+    </div>
+    <div class="card">
+        <img src="https://purposefulpolitics.com/wp-content/uploads/2023/01/political-campaign-volunteers-2-768x512.jpg" alt="Volunteers">
+        <h3><a href="volunteer.html">Volunteers</a></h3>
+        <p>Join hands with us and bring change together.</p>
+    </div>
+    <div class="card">
+        <img src="https://media.whas11.com/assets/WHAS/images/f137c339-a769-4f5d-8784-fcc694a7f8af/f137c339-a769-4f5d-8784-fcc694a7f8af_1140x641.jpg" alt="Healthcare and Rehabilitation">
+        <h3><a href="eye.html">Healthcare and Rehabilitation</a></h3>
+        <p>Providing free eye checkups, surgeries, and assistive devices.</p>
+    </div>
+    <div class="card">
+        <img src="https://blog.vancity.com/wp-content/uploads/2016/12/GiveHands-iStock-Blog-1280x620-1280x620.jpg" alt="Money">
+        <h3><a href="donations.html">Donations</a></h3>
+        <p>Your generous contributions make our work possible.</p>
+    </div>
+    <div class="card">
+        <img src="https://en-media.thebetterindia.com/uploads/2017/03/banner3.jpg" alt="Education and Training">
+        <h3><a href="education-training.html">Education and Training</a></h3>
+        <p>Empowering the visually impaired with skills for independence.</p>
+    </div>
+</div>
+    </section>
+<section id="donate" class="section">
+    <h2>Make a Difference</h2>
+    <p>Your generous donation helps us provide meals to those in need.</p>
+    <button onclick="showDonationForm()">Donate Now</button>
+    <div class="donation-form">
+        <h2>Donate Now</h2>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <label for="category">Category</label>
+        <select id="category">
+            <option>Food Rescue</option>
+            <option>Child Hunger</option>
+            <option>Education and Training</option>
+            <option>Healthcare and Rehabilitation</option>
+        </select>
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" placeholder="Enter the amount">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" placeholder="Enter your phone number">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <button onclick="showQRCode()">Proceed to Payment</button>
+        <div class="qr-code">
+            <h3>Scan to Pay</h3>
+            <img src="D:/Temp/WhatsApp Image 2025-01-05 at 22.42.16_c2400e52.jpg" alt="QR Code">
+            <p>Upload payment proof:</p>
+            <input type="file" id="proof">
+            <button onclick="submitDonation()">Submit</button>
+        </div>
+    </div>
+</section>
+    <footer>
+        <p>&copy; 2025 Charity Trust. All rights reserved.</p>
+        <p><a href="#contact">Contact Us</a> | <a href="#about">Privacy Policy</a></p>
+    </footer>
+    <script>
+        function showDonationForm() {
+            document.querySelector('.donation-form').style.display = 'block';
+        }
+        function showQRCode() {
+            document.querySelector('.qr-code').style.display = 'block';
+        }
+        function submitDonation() {
+            alert('Thank you for your generous donation!');
+        }
+    </script>
+</body>
+</html>

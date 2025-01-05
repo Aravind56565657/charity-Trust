@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<style>
+		.contact {
+    padding: 50px;
+    background-color: #f7f7f7;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #f47c3c;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #f47c3c;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #e76a2a;
+}
+
+.contact-form button:active {
+    transform: scale(0.98);
+}
+	</style>
+</head>
+<body><section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you! Please fill out the form below:</p>
+    
+    <!-- Contact Form -->
+    <form action="file:///C:/submit-form" method="POST" class="contact-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required="">
+        
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required="">
+        
+        <label for="phone">Your Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required="">
+        
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here" rows="5" required=""></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+</section>
+</body></html>

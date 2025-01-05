@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity for Eye Care</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #6a5acd;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #6a5acd;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .cta {
+            margin-top: 20px;
+        }
+
+        .cta button {
+            padding: 10px 20px;
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .cta button:hover {
+            background-color: #5941c2;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .modal h3 {
+            margin-bottom: 15px;
+            color: #6a5acd;
+        }
+
+        .modal button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #5941c2;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .form {
+            display: none;
+            text-align: left;
+        }
+
+        .form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .form input, .form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #6a5acd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function openModal() {
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            document.querySelectorAll('.form').forEach(form => form.style.display = 'none');
+        }
+
+        function showForm(type) {
+            document.querySelectorAll('.form').forEach(form => form.style.display = 'none');
+            document.getElementById(type + '-form').style.display = 'block';
+        }
+
+        function submitForm(type) {
+            alert(type.charAt(0).toUpperCase() + type.slice(1) + ' details submitted successfully!');
+            closeModal();
+        }
+
+        function showContacts() {
+            alert("Contact us at:\n1. 123-456-7890\n2. 987-654-3210\n3. 555-666-7777");
+            closeModal();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Charity for Eye Care</h1>
+        <p>Bringing Vision to the Needy</p>
+    </header>
+
+    <section>
+        <img src="https://media.whas11.com/assets/WHAS/images/f137c339-a769-4f5d-8784-fcc694a7f8af/f137c339-a769-4f5d-8784-fcc694a7f8af_1140x641.jpg" alt="Eye Checkup">
+        <h2>Healthcare and Rehabilitation</h2>
+        <p>Providing free eye checkups, surgeries, and assistive devices like spectacles for the underprivileged.</p>
+        <p>We aim to eliminate avoidable blindness and improve quality of life for individuals who cannot afford eye care services.</p>
+        <div class="cta">
+            <button onclick="openModal()">Our services</button>
+        </div>
+    </section>
+
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
+
+    <div id="modal" class="modal">
+        <h3>What type of assistance do you need?</h3>
+        <button onclick="showForm('eye-checkup')">Eye Checkup</button>
+        <button onclick="showForm('spectacles')">Spectacles</button>
+        <button onclick="showForm('surgery')">Surgery</button>
+        <button onclick="showContacts()">Other</button>
+        <button onclick="closeModal()">Close</button>
+
+        <div id="eye-checkup-form" class="form">
+            <h3>Eye Checkup</h3>
+            <label for="checkup-name">Name:</label>
+            <input type="text" id="checkup-name" placeholder="Enter your name">
+            <label for="checkup-contact">Contact:</label>
+            <input type="text" id="checkup-contact" placeholder="Enter your contact">
+            <label for="checkup-email">Email:</label>
+            <input type="email" id="checkup-email" placeholder="Enter your email">
+			<label for="checkup-Address">Address:</label>
+            <input type="Address" id="checkup-Address" placeholder="Enter your Address">
+            <label for="checkup-slot">Preferred Slot:</label>
+            <input type="date" id="checkup-date">
+            <input type="time" id="checkup-time">
+            <button onclick="submitForm('eye-checkup')">Submit</button>
+        </div>
+
+        <div id="spectacles-form" class="form">
+            <h3>Spectacles</h3>
+            <label for="spectacles-name">Name:</label>
+            <input type="text" id="spectacles-name" placeholder="Enter your name">
+            <label for="spectacles-contact">Contact:</label>
+            <input type="text" id="spectacles-contact" placeholder="Enter your contact">
+            <label for="spectacles-email">Email:</label>
+            <input type="email" id="spectacles-email" placeholder="Enter your email">
+			<label for="spectacles-email">Address:</label>
+            <input type="Address" id="spectacles-Address" placeholder="Enter your Address">
+            <label for="spectacles-slot">Preferred Slot:</label>
+            <input type="date" id="spectacles-date">
+            <input type="time" id="spectacles-time">
+            <button onclick="submitForm('spectacles')">Submit</button>
+        </div>
+
+        <div id="surgery-form" class="form">
+            <h3>Surgery</h3>
+            <label for="surgery-name">Name:</label>
+            <input type="text" id="surgery-name" placeholder="Enter your name">
+            <label for="surgery-contact">Contact:</label>
+            <input type="text" id="surgery-contact" placeholder="Enter your contact">
+            <label for="surgery-condition">What are you suffering from?:</label>
+            <textarea id="surgery-condition" placeholder="Describe your condition"></textarea>
+			<label for="surgery-email">Address:</label>
+            <input type="Address" id="surgery-Address" placeholder="Enter your Address">
+            <label for="surgery-slot">Preferred Visit Time:</label>
+            <input type="date" id="surgery-date">
+            <input type="time" id="surgery-time">
+            <button onclick="submitForm('surgery')">Submit</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Charity Trust. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

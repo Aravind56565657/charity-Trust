@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Sign-Up - Charity Trust</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f47c3c;
+            padding: 10px 20px;
+            color: white;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+		footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color: #f47c3c;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .banner {
+            text-align: center;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .banner p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        .banner button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #f47c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .banner button:hover {
+            background-color: #e76a2a;
+        }
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        /* Volunteer Form */
+        .volunteer-form {
+            display: block;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .volunteer-form h2 {
+            margin-bottom: 20px;
+        }
+        .volunteer-form label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        .volunteer-form input,
+        .volunteer-form select,
+        .volunteer-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .volunteer-form button {
+            background-color: #f47c3c;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .volunteer-form button:hover {
+            background-color: #e76a2a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Charity Trust</div>
+        <nav>
+            <a href="#about">Who We Are</a>
+            <a href="#work">Our Work</a>
+            <a href="#donate">Donate</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <h1>Become a Volunteer</h1>
+        <p>Join us in making a difference in the community</p>
+        <button onclick="window.location.href='#volunteer-form'">Sign Up Now</button>
+    </div>
+
+    <section id="volunteer-form" class="section">
+        <h2>Volunteer Sign Up</h2>
+        <p>Fill out the form below to become a volunteer with us and help us create a positive impact!</p>
+        <div class="volunteer-form">
+            <h2>Volunteer Form</h2>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" placeholder="Enter your phone number">
+            <label for="age">Age</label>
+            <input type="number" id="age" placeholder="Enter your age">
+            <label for="area-of-interest">Area of Interest</label>
+            <select id="area-of-interest">
+                <option>Food Rescue</option>
+                <option>Child Hunger</option>
+                <option>Healthcare and Rehabilitation</option>
+                <option>Education and Training</option>
+                <option>Community Support</option>
+            </select>
+            <label for="availability">Availability (in hours per week)</label>
+            <input type="number" id="availability" placeholder="Enter your availability">
+            <button onclick="submitVolunteerForm()">Submit</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Charity Trust. All rights reserved.</p>
+        <p><a href="#contact">Contact Us</a> | <a href="#about">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        function submitVolunteerForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const age = document.getElementById('age').value;
+            const areaOfInterest = document.getElementById('area-of-interest').value;
+            const availability = document.getElementById('availability').value;
+
+            if (name && email && phone && age && areaOfInterest && availability) {
+                alert('Thank you for signing up as a volunteer! We will get in touch with you shortly.');
+            } else {
+                alert('Please fill in all the fields.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity for Child Hunger</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff7043;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #ff7043;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .cta {
+            margin-top: 20px;
+        }
+
+        .cta button {
+            padding: 10px 20px;
+            background-color: #ff7043;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .cta button:hover {
+            background-color: #e64a19;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .modal h3 {
+            margin-bottom: 15px;
+            color: #ff7043;
+        }
+
+        .modal button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #ff7043;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #e64a19;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .form {
+            display: none;
+            text-align: left;
+        }
+
+        .form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .form input, .form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #ff7043;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #ff7043;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function openModal() {
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            document.querySelectorAll('.form').forEach(form => form.style.display = 'none');
+        }
+
+        function showForm(type) {
+            document.querySelectorAll('.form').forEach(form => form.style.display = 'none');
+            document.getElementById(type + '-form').style.display = 'block';
+        }
+
+        function submitForm(type) {
+            alert(type.charAt(0).toUpperCase() + type.slice(1) + ' details submitted successfully!');
+            closeModal();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Charity for Child Hunger</h1>
+        <p>Providing meals to children across the globe.</p>
+    </header>
+
+    <section>
+        <img src="https://th.bing.com/th/id/OIP.MuTWK6YqRuxaIrlPlgQKHQHaE8?w=3456&h=2304&rs=1&pid=ImgDetMain" alt="Child Hunger">
+        <h2>Fight Child Hunger</h2>
+        <p>Join us in our mission to eliminate child hunger and provide nutritious meals to children in need.</p>
+        <p>Your contributions make a huge difference in improving their lives and ensuring a brighter future.</p>
+        <div class="cta">
+            <button onclick="openModal()">Support Us</button>
+        </div>
+    </section>
+
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
+
+    <div id="modal" class="modal">
+        <h3>How would you like to support?</h3>
+        <button onclick="showForm('donate')">Donate</button>
+        <button onclick="showForm('volunteer')">Volunteer</button>
+        <button onclick="showForm('partner')">Partner</button>
+        <button onclick="closeModal()">Close</button>
+
+        <div id="donate-form" class="form">
+            <h3>Donate</h3>
+            <label for="donate-name">Name:</label>
+            <input type="text" id="donate-name" placeholder="Enter your name">
+            <label for="donate-email">Email:</label>
+            <input type="email" id="donate-email" placeholder="Enter your email">
+            <label for="donate-amount">Donation Amount:</label>
+            <input type="number" id="donate-amount" placeholder="Enter amount">
+            <button onclick="submitForm('donate')">Submit</button>
+        </div>
+
+        <div id="volunteer-form" class="form">
+            <h3>Volunteer</h3>
+            <label for="volunteer-name">Name:</label>
+            <input type="text" id="volunteer-name" placeholder="Enter your name">
+            <label for="volunteer-contact">Contact:</label>
+            <input type="text" id="volunteer-contact" placeholder="Enter your contact">
+            <label for="volunteer-skill">Skills/Interests:</label>
+            <textarea id="volunteer-skill" placeholder="Describe your skills"></textarea>
+            <button onclick="submitForm('volunteer')">Submit</button>
+        </div>
+
+        <div id="partner-form" class="form">
+            <h3>Partner</h3>
+            <label for="partner-name">Organization Name:</label>
+            <input type="text" id="partner-name" placeholder="Enter your organization name">
+            <label for="partner-contact">Contact:</label>
+            <input type="text" id="partner-contact" placeholder="Enter your contact">
+            <label for="partner-details">Details:</label>
+            <textarea id="partner-details" placeholder="Describe how you want to partner"></textarea>
+            <button onclick="submitForm('partner')">Submit</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Charity Trust. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

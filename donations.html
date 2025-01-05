@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations - Charity Trust</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #f47c3c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #f47c3c;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .donation-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .donation-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .donation-card img {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+        }
+        .donation-card h3 {
+            margin-top: 15px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .donation-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        .donation-form {
+            margin-top: 15px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #f47c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e76a2a;
+        }
+		.qr-code img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.qr-code button {
+    background: linear-gradient(135deg, #4CAF50, #3a9f40);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+        .qr-code h3 {
+            color: #f47c3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Make a Donation</h1>
+    </header>
+    <div class="container">
+        <h2>Your Generosity Matters</h2>
+        <div class="donation-section">
+            <!-- Donation Cards with Forms -->
+            <div class="donation-card">
+                <h3>Donate Clothes</h3>
+                <p>Help those in need by donating gently used or new clothes.</p>
+                <form class="donation-form">
+                    <label for="clothes-name">Your Name</label>
+                    <input type="text" id="clothes-name" placeholder="Enter your name">
+                    <label for="clothes-email">Email</label>
+                    <input type="email" id="clothes-email" placeholder="Enter your email">
+                    <label for="clothes-phone">Phone Number</label>
+                    <input type="text" id="clothes-phone" placeholder="Enter your phone number">
+                    <button type="button">Donate Clothes</button>
+                </form>
+            </div>
+            <div class="donation-card">
+                <h3>Donate Food</h3>
+                <p>Provide meals to hungry families by donating food items.</p>
+                <form class="donation-form">
+                    <label for="food-name">Your Name</label>
+                    <input type="text" id="food-name" placeholder="Enter your name">
+                    <label for="food-email">Email</label>
+                    <input type="email" id="food-email" placeholder="Enter your email">
+                    <label for="food-phone">Phone Number</label>
+                    <input type="text" id="food-phone" placeholder="Enter your phone number">
+                    <button type="button">Donate Food</button>
+                </form>
+            </div>
+            <div class="donation-card">
+                <h3>Donate Books</h3>
+                <p>Support education by donating books for children and adults.</p>
+                <form class="donation-form">
+                    <label for="books-name">Your Name</label>
+                    <input type="text" id="books-name" placeholder="Enter your name">
+                    <label for="books-email">Email</label>
+                    <input type="email" id="books-email" placeholder="Enter your email">
+                    <label for="books-phone">Phone Number</label>
+                    <input type="text" id="books-phone" placeholder="Enter your phone number">
+                    <button type="button">Donate Books</button>
+                </form>
+            </div>
+            <div class="donation-card" style="flex: 100%; padding: 30px; max-width: 100%;">
+    <h3 style="font-size: 2.5rem; margin-top: 20px;">Donate Money</h3>
+    <p style="font-size: 1.3rem; color: #444; margin-bottom: 30px;">
+        Your financial contributions empower us to reach underserved communities, enhance educational opportunities, improve healthcare access, and provide immediate disaster relief. Be the cornerstone of change and help us achieve a better world.
+    </p>
+    <form class="donation-form">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <label for="money-name">Your Name</label>
+                <input type="text" id="money-name" placeholder="Enter your name">
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <label for="money-email">Email</label>
+                <input type="email" id="money-email" placeholder="Enter your email">
+            </div>
+        </div>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <label for="money-phone">Phone Number</label>
+                <input type="text" id="money-phone" placeholder="Enter your phone number">
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <label for="money-amount">Donation Amount (in USD)</label>
+                <input type="number" id="money-amount" placeholder="Enter donation amount">
+            </div>
+        </div>
+        <label for="money-purpose">Purpose of Donation</label>
+        <select id="money-purpose" style="width: 100%;">
+            <option value="education">Education</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="disaster-relief">Disaster Relief</option>
+            <option value="general-support">General Support</option>
+        </select>
+        <label for="money-message">Message (Optional)</label>
+        <textarea id="money-message" rows="4" style="width: 100%;" placeholder="Write a message (e.g., dedication, specific use)"></textarea>
+        <button type="button" id="donate-money-button" style="width: 100%; padding: 15px; font-size: 1.2rem; margin-top: 20px;">Donate Money</button>
+    </form>
+    <div class="qr-code" id="qr-code-section" style="display: none; margin-top: 20px;">
+        <h3>Scan to Pay</h3>
+        <img src="D:/Temp/WhatsApp Image 2025-01-05 at 22.42.16_c2400e52.jpg" alt="QR Code">
+        <p>Upload payment proof:</p>
+        <input type="file" id="proof">
+        <button id="submit-proof-button">Submit</button>
+    </div>
+</div>
+
+        </div>
+    </div>
+    <div class="container">
+        <h2>Adopt a Child</h2>
+        <p style="text-align: center; font-size: 1.2rem; color: #666;">
+            Sponsor a child and bear their complete expenses for education, healthcare, and well-being. Together, we can give them a brighter future.
+        </p>
+        <form style="max-width: 600px; margin: 0 auto;">
+            <label for="adopt-name">Your Name</label>
+            <input type="text" id="adopt-name" placeholder="Enter your name">
+            <label for="adopt-email">Email</label>
+            <input type="email" id="adopt-email" placeholder="Enter your email">
+            <label for="adopt-phone">Phone Number</label>
+            <input type="text" id="adopt-phone" placeholder="Enter your phone number">
+            <label for="adopt-address">Address</label>
+            <input type="text" id="adopt-address" placeholder="Enter your address">
+            <button type="button">Adopt a Child</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    // Function to handle form submission and QR code visibility
+    document.addEventListener("DOMContentLoaded", () => {
+        const donateMoneyButton = document.getElementById("donate-money-button");
+        const qrCodeSection = document.getElementById("qr-code-section");
+        const proofInput = document.getElementById("proof");
+        const submitProofButton = document.getElementById("submit-proof-button");
+
+        // Show QR code section after clicking "Donate Money"
+        donateMoneyButton.addEventListener("click", () => {
+            const name = document.getElementById("money-name").value.trim();
+            const email = document.getElementById("money-email").value.trim();
+            const phone = document.getElementById("money-phone").value.trim();
+            const amount = document.getElementById("money-amount").value.trim();
+
+            if (name && email && phone && amount) {
+                qrCodeSection.style.display = "block";
+                alert("Thank you for your interest! Please scan the QR code to complete your donation.");
+            } else {
+                alert("Please fill out all required fields before proceeding.");
+            }
+        });
+
+        // Handle file upload submission
+        submitProofButton.addEventListener("click", () => {
+            if (proofInput.files.length > 0) {
+                alert("Thank you! Your payment proof has been submitted successfully.");
+                qrCodeSection.style.display = "none";
+            } else {
+                alert("Please upload the payment proof before submitting.");
+            }
+        });
+    });
+
+
+    // Attach event listeners to buttons
+    document.addEventListener("DOMContentLoaded", () => {
+        // Clothes donation form
+        document.querySelector('.donation-card:nth-of-type(1) .donation-form button')
+            .addEventListener("click", () => handleFormSubmission(".donation-card:nth-of-type(1) .donation-form", "clothes donation"));
+
+        // Food donation form
+        document.querySelector('.donation-card:nth-of-type(2) .donation-form button')
+            .addEventListener("click", () => handleFormSubmission(".donation-card:nth-of-type(2) .donation-form", "food donation"));
+
+        // Books donation form
+        document.querySelector('.donation-card:nth-of-type(3) .donation-form button')
+            .addEventListener("click", () => handleFormSubmission(".donation-card:nth-of-type(3) .donation-form", "books donation"));
+
+        // Money donation form
+        document.querySelector('.donation-card:nth-of-type(4) .donation-form button')
+            .addEventListener("click", () => handleFormSubmission(".donation-card:nth-of-type(4) .donation-form", "financial contribution"));
+
+        // Adopt a child form
+        document.querySelector('.container:nth-of-type(2) form button')
+            .addEventListener("click", () => handleFormSubmission(".container:nth-of-type(2) form", "adoption sponsorship"));
+    });
+</script>
